@@ -22,5 +22,9 @@ def generateAnswer():
         return jsonify({"error": error_message}), 500
 
 
-if __name__ == '__main__':
-    app.run()
+def start_app():
+    if __name__ == '__main__':
+        app.run()
+
+
+start_app()
