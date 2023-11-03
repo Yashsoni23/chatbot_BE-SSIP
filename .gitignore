@@ -1,0 +1,10 @@
+venv
+.env
+instance/*
+!instance/.gitignore
+.webassets-cache
+.git
+__pycache__/
+*.py[cod]
+*$py.class
+.vercel
