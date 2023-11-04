@@ -23,19 +23,26 @@ queries_collection = client.get_database().get_collection("queries")
 
 def chatbot_response(request):
     if request.method == 'POST':
-        user_input = request.POST.get('user_input')
-        if user_input:
-            response = answer_question(user_input)
+        try:
+            data = json.loads(request.body)
 
-            chat_entry = {
-                'user_question': user_input,
-                'chatbot_response': response,
-            }
-            chat_history_collection.insert_one(chat_entry)
+            user_input = data.get('user_input')
 
-            return JsonResponse({'response': response})
-        else:
-            return JsonResponse({'error': 'User input is missing.'})
+            if user_input:
+                response = answer_question(user_input)
+
+                chat_entry = {
+                    'user_question': user_input,
+                    'chatbot_response': response,
+                }
+
+                chat_history_collection.insert_one(chat_entry)
+
+                return JsonResponse({'response': response})
+            else:
+                return JsonResponse({'error': 'User input is missing.'})
+        except json.JSONDecodeError as e:
+            return JsonResponse({'error': f'Invalid JSON format: {str(e)}'})
     else:
         return JsonResponse({'error': 'Invalid request method.'})
 
