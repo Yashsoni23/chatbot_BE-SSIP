@@ -34,7 +34,7 @@ EMAIL_HOST_USER = 'yashsoni48678@gmail.com'  # Your Gmail email address
 # Your Gmail password or app-specific password
 EMAIL_HOST_PASSWORD = 'mgtc njva uwqs iqpx'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gmscl.wsgi.application'
+WSGI_APPLICATION = 'gmscl.wsgi.app'
 
 
 # Database
