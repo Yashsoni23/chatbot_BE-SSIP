@@ -16,6 +16,5 @@
 
 if you want to close the virtual environment so hit the below command. - dactivate
 
-
 - POSTMAN COLLECTION:
   - https://dark-shuttle-627349.postman.co/workspace/Samurizer~7010e41f-c60b-44fe-afd5-8f2095389cdd/collection/22491670-c5f4335a-60bc-4f92-959b-99f7722b6416?action=share&creator=22491670
