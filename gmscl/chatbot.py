@@ -47,12 +47,18 @@ def predict_class(sentence):
 
 
 def get_response(intens_list, intents_json):
+    if not intens_list:
+        return "No answer found in db"
+
     tag = intens_list[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
-        if (i['tags'] == tag):
+        if i.get('tags') == tag:
             result = random.choice(i['responses'])
             break
+    else:
+        result = "Intent not found in the provided JSON"
+
     return result
 
 

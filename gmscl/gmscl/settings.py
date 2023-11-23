@@ -34,7 +34,8 @@ EMAIL_HOST_USER = 'yashsoni48678@gmail.com'  # Your Gmail email address
 # Your Gmail password or app-specific password
 EMAIL_HOST_PASSWORD = 'mgtc njva uwqs iqpx'
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app',
+                 'localhost']
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
